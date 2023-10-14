@@ -1,36 +1,23 @@
-﻿@model IEnumerable<Student>
+﻿
 @{
-    ViewData["Title"] = "Upload Student Excel";
+    ViewData["Title"] = "Upload Excel";
 }
 
-<form asp-controller="Home" asp-action="Index" method="post" enctype="multipart/form-data">
-    <input type="file" name="postedFile" />
-    <hr/>
-    <button type="submit">Upload</button>
-</form>
-    
- @if(Model.Count()>0)
- {
-<hr/>
-<table cellpadding="0" cellspacing="0" border="1">
-<tr><td>Id</td>
-<td>Student Name</td>
-<td>Father name</td>
-<td>Mother Name</td>
-<td>DOB</td>
-<td>Mobile Number</td></tr>
-@foreach(Student student in Model)
-{
-<tr>
-    <td>@student.Id</td>
-    <td>@student.stuName</td>
-<td>@student.fName</td>
-<td>@student.Mname</td>
-<td>@student.DOB</td>
-<td>@student.Mnumber</td>
-
-</tr>
-}
-</table>
-
- }
+<div class="row">
+    <div class="col-5">
+        <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+        <div class="form-group">
+            <div class="col-md-10">
+            <h3> Upload File</h3>
+            <input class="form-control" name="formFile" multiple="multiple" type="file" />
+            </div>
+        </div>    
+        <br />
+        <div class="form-group">
+            <div class="col-md-10">
+                <input class="btn btn-primary" type="submit" value="upload File" />
+            </div>
+        </div>
+        </form>
+    </div>
+</div>

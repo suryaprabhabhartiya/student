@@ -50,6 +50,94 @@ namespace student.Migrations
 
                     b.ToTable("Students");
                 });
+
+            modelBuilder.Entity("student.Models.BulkLedger", b =>
+                {
+                    b.Property<string>("Sr")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Academic_Year")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Adjusted_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Admno_UniqueId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Alloted_Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Batch")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Concession_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Date")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Due_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Faculty")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fee_Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fee_Head")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fund_TranCfer_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Paid_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Program")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Receipt_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Refund_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reverse_Concession_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Roll_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Scholarship_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Session")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Voucher_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Voucher_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Write_Off_Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Sr");
+
+                    b.ToTable("BulkLedgers");
+                });
 #pragma warning restore 612, 618
         }
     }

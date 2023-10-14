@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using student.Repository;
 using student.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,8 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<student.Context.DataBaseContext>();
-builder.Services.AddScoped<IStudentServices, StudentServices>();
+builder.Services.AddDbContext<student.Context.DataBaseContext>(conn =>conn.UseSqlServer(builder.Configuration.GetConnectionString("sqlconnection")));
+builder.Services.AddScoped<IBulkLedger, BulkLedgerDetails>();
+//builder.Services.AddDbContext<student.Context.DataBaseContext>();
+//builder.Services.AddScoped<IStudentServices, StudentServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,6 +31,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Student}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=UploadExceltoDB}/{id?}");
 
 app.Run();
